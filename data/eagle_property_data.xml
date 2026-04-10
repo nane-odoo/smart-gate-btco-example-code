@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="property_1" model="eagle.property">
+        <field name="name">Apartment 217</field>
+        <field name="construction_date">2009-10-01</field>
+        <field name="tag_ids" eval="[Command.clear(), Command.link(ref('residential_tag'))]" />
+    </record>
+
+    <record id="property_2" model="eagle.property">
+        <field name="name">Apartment 9905</field>
+        <field name="construction_date">2010-04-24</field>
+        <field name="tag_ids" eval="[Command.clear(), Command.link(ref('residential_tag'))]" />
+    </record>
+
+    <record id="property_3" model="eagle.property">
+        <field name="name">Burj Khalifa</field>
+        <field name="construction_date">2009-10-01</field>
+        <field name="street">1 Sheikh Mohammed bin Rashid Blvd</field>
+        <field name="zip">00000</field>
+        <field name="city">Dubai</field>
+        <field name="state_id" ref="base.state_ae_du"/>
+        <field name="country_id" ref="base.ae" />
+        <field name="tag_ids"
+            eval="[Command.clear(), Command.link(ref('residential_tag')), Command.link(ref('commercial_tag'))]" />
+        <field name="child_ids"
+            eval="[Command.clear(), Command.link(ref('eagle_estates.property_1')), Command.link(ref('eagle_estates.property_2'))]" />
+    </record>
+</odoo>

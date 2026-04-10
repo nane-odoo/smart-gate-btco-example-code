@@ -1,0 +1,25 @@
+<odoo>
+    <record id="view_eagle_tag_form" model="ir.ui.view">
+        <field name="name">eagle.tag.view.form</field>
+        <field name="model">eagle.tag</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_eagle_tag_list" model="ir.ui.view">
+        <field name="name">eagle.tag.view.list</field>
+        <field name="model">eagle.tag</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name" />
+            </list>
+        </field>
+    </record>
+</odoo>

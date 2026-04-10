@@ -1,0 +1,45 @@
+<odoo>
+    <record id="eagle_properties_actions" model="ir.actions.act_window">
+        <field name="name">Properties</field>
+        <field name="res_model">eagle.property</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <record id="eagle_property_rooms_actions" model="ir.actions.act_window">
+        <field name="name">Rooms</field>
+        <field name="res_model">eagle.property.room</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <record id="eagle_tags_actions" model="ir.actions.act_window">
+        <field name="name">Tags</field>
+        <field name="res_model">eagle.tag</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <record id="eagle_properties_compounds_action" model="ir.actions.act_window">
+        <field name="name">Compounds</field>
+        <field name="res_model">eagle.property</field>
+        <field name="view_mode">list,form</field>
+        <field name="domain">[("parent_id", "=", False)]</field>
+        <field name="context">{"default_name": "New Compound"}</field>
+    </record>
+
+    <record id="eagle_properties_units_action" model="ir.actions.act_window">
+        <field name="name">Units</field>
+        <field name="res_model">eagle.property</field>
+        <field name="view_mode">list,form</field>
+        <field name="domain">[("parent_id", "!=", False)]</field>
+        <field name="context">{"default_name": "New Units"}</field>
+    </record>
+
+    <menuitem id="menu_eagle_estates_root" name="Eagle Estates" web_icon="eagle_estates,static/description/icon.png" sequence="10">
+        <menuitem id="menu_eagle_estates_properties" name="Properties" sequence="1">
+            <menuitem id="eagle_estates_properties_compounds" name="Compounds" action="eagle_properties_compounds_action" sequence="4" />
+            <menuitem id="eagle_estates_properties_units"  name="Units" action="eagle_properties_units_action" sequence="5" />
+        </menuitem>
+
+        <menuitem id="menu_eagle_estates_property_rooms" name="Rooms" action="eagle_property_rooms_actions" sequence="2" />
+        <menuitem id="menu_eagle_estate_tags" name="Tags" action="eagle_tags_actions" sequence="3" />
+    </menuitem>
+</odoo>

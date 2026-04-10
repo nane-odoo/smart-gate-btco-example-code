@@ -1,0 +1,9 @@
+<odoo>
+    <record id="residential_tag" model="eagle.tag">
+        <field name="name">Residential</field>
+    </record>
+
+    <record id="commercial_tag" model="eagle.tag">
+        <field name="name">Commerical</field>
+    </record>
+</odoo>

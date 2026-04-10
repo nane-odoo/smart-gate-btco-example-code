@@ -1,0 +1,43 @@
+<odoo>
+    <record id="view_eagle_property_room_form" model="ir.ui.view">
+        <field name="name">eagle.property.room.view.form</field>
+        <field name="model">eagle.property.room</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button type="object" name="action_open_area_wizard" string="Calculate Area"/>
+                </header>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="room_type" />
+                            <field name="area" />
+                            <field name="property_id" />
+                            <field name="construction_date" />
+                        </group>
+
+                        <group>
+                            <field name="street" />
+                            <field name="zip" />
+                            <field name="city" />
+                            <field name="state_id" />
+                            <field name="country_id" />
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_eagle_property_room_list" model="ir.ui.view">
+        <field name="name">eagle.property.room.view.list</field>
+        <field name="model">eagle.property.room</field>
+        <field name="arch" type="xml">
+            <list create="false">
+                <field name="room_type" />
+                <field name="area" />
+                <field name="property_id" />
+            </list>
+        </field>
+    </record>
+</odoo>

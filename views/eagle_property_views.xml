@@ -1,0 +1,70 @@
+<odoo>
+    <record model="ir.ui.view" id="view_eagle_property_list">
+        <field name="name">eagle.property.view.list</field>
+        <field name="model">eagle.property</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name" />
+                <field name="construction_date" />
+                <field name="area" />
+            </list>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_eagle_property_form">
+        <field name="name">eagle.property.view.form</field>
+        <field name="model">eagle.property</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button type="object" name="action_create_room" string="Create Room"/>
+                </header>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button type="object" class="oe_stat_button" name="action_view_rooms" icon="fa-list" invisible="not room_count">
+                            <field name="room_count" string="Rooms" widget="statinfo"/>
+                        </button>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="name" />
+                            <field name="display_name" />
+
+                            <field name="construction_date" />
+                            <field name="age" />
+                            <field name="area" />
+                        </group>
+                        <group>
+                            <field name="street"/>
+                            <field name="zip" />
+                            <field name="city" />
+                            <field name="state_id" />
+                            <field name="country_id" />
+                        </group>
+                        <group>
+                            <field name="room_count" />
+                            <field name="tag_ids" widget="many2many_tags"/>
+                        </group>
+                        <group>
+                            <field name="parent_id" invisible="child_ids"/>
+                        </group>
+                    </group>
+
+                    <notebook>
+                        <page name="units" string="Units">
+                            <field name="child_ids" invisible="parent_id">
+                                <list>
+                                    <field name="name" />
+                                    <field name="area" />
+                                    <field name="construction_date" />
+                                    <field name="age" />
+                                </list>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+                <chatter />
+           self.id </form>
+        </field>
+    </record>
+</odoo>

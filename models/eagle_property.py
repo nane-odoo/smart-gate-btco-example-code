@@ -1,6 +1,8 @@
 from odoo import api, models, fields, exceptions
 from dateutil.relativedelta import relativedelta
 
+
+
 class EagleProperty(models.Model):
     _name = "eagle.property"
     _description = "Eagle Property"
